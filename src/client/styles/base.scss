@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  main {
+    flex: 3;
+    color: #0066CC;
+    font-size: medium;
+    font-family: 'Roboto', serif;
+    background-color: white;
+  }
+  
+  #resultsTable {
+    table {
+      color: black;
+      background-color: whitesmoke;
+      border-radius: 2px;
+      border-collapse: collapse;
+      // margin: 10px;
+      padding: 10px;
+      width: 100%;
+    }
+    
+    tr, th, td {
+      text-align: left;
+      padding: 10px;
+      color:#333;
+      border-radius: 2px;
+    }
+    
+    tr:nth-child(even){background-color: white}
+  }
+  
+  section {
+    max-width: 800px;
+    margin: 50px auto;
+  }
+
+  h1 {
+    margin: 1em;
+    font-size: x-large
+  }
+
+  h2 {
+    margin: 1.5em;
+    font-size: medium   
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-size: medium;
+    margin: 8px;
+  }
+  
