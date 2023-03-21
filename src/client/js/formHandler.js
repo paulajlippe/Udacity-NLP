@@ -1,4 +1,3 @@
-import { click } from 'webpack-dev-server';
 import { checkURL} from './checkURL';
 
 function handleSubmit(event) {
