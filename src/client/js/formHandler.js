@@ -1,4 +1,4 @@
-// import { click } from 'webpack-dev-server';
+import { click } from 'webpack-dev-server';
 import { checkURL} from './checkURL';
 
 function handleSubmit(event) {
@@ -13,7 +13,6 @@ function handleSubmit(event) {
     }};
 
 export { handleSubmit }
-
 
 //Helper functions: 
 async function getMeaningData(url, userInput) {

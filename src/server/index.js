@@ -34,7 +34,6 @@ function listening() {
 }
 
 // Get
-
 app.get("/", function (req, res) {
   res.sendFile(path.resolve("src/client/views/index.html"));
 });
