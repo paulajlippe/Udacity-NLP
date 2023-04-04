@@ -7,10 +7,15 @@ var path = require("path");
 
 // Global Variables & functions
 const baseURL = "https://api.meaningcloud.com/sentiment-2.1?key=";
-const apiKey = process.env.API_KEY;
-const restUrl = "&lang=auto&url=";
+const apiKey = process.env.API_KEY
 
 console.log(`Your API key is ${process.env.API_KEY}`);
+
+// Setup empty JS object to act as endpoint for SUMMARY route
+serverData = {};
+
+// Setup empty JS object to act as endpoint for SENTIMENT route
+getMeaningData = {};
 
 // Require Express for server and routes
 const express = require('express');
@@ -40,26 +45,12 @@ app.get("/", function (req, res) {
 
 
 // Summary Endpoint: make Meaning Cloud SUMMARY API call, save data to server, send back to client success message
-app.post("/api", async function getMeaningData(req, resp) {
+app.post("/checkURL", async function getMeaningData(req, resp) {
   userInput = req.body.url;
   console.log("getMeaningData: incoming request is ..", req.body);
 
-  const getMeaningData = {
-    method: "GET",
-    url: "http://api.meaningcloud.com/summarization-1.0",
-    params: {
-      key: `${my_key}`,
-      url: `${req.body.summary_url}`,
-    },
-    headers: {},
-  };
-  try {
-    const data = await getMeaningData.json();
-    console.log(getMeaningData, data)
-    res.send(data);
-  }
-  catch (error) {
-    console.log("error", error);
-    }
-  
+  const response = await fetch(getMeaningData)
+  const data = await response.json()
+  console.log(data)
+
 })

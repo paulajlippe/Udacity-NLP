@@ -8,23 +8,22 @@
     </head>
 
     <body>
-
         <header>
             <div class="header">
                <h1>Udacity: Natural Language Processing Project</h1>
                <h2>Paula Lippe 2023</h2> 
             </div>
-            <div class="image">
+            <!-- <div class="image">
                 <img id="image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.cognixia.com%2Fus%2Fwp-content%2Fuploads%2F2018%2F12%2FHow-can-machine-learning-transform-min.jpg&f=1&nofb=1&ipt=eef3bbdbca1eeae830b446d6f68b1fe7b12e1bfb45a06c3ee8eda917c9746b8a&ipo=images">
-            </div>
+            </div> -->
         </header>
 
         <main>
             <section>
                 <form class="form">
-                  <h3>News Article</h3>
+                  <h3>Article</h3>
                     <input id= "userInput" type="text" name="userInput" value="" placeholder="Insert URL here">
-                    <button id="submit">Submit</button>
+                    <button id="submit" onsubmit="return Client.handleSubmit(checkURL)">Submit</button>
                 </form>
             </section>
 

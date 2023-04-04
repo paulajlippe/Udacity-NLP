@@ -1,17 +1,52 @@
-import { checkURL} from './checkURL';
+import { checkURL } from './checkURL';
+
+// function handleSubmit(event) {
+//   event.preventDefault()
+//   const formText = document.getElementById('userInput').value;
+//   // const errormessage = Client.checkURL(formText)
+//   // document.getElementById("err").innerHTML = '';
+//   // if (errormessage) {
+//   //     document.getElementById("err").innerHTML = errormessage
+//   //     return
+//   // }
+
+//   // fetch('http://localhost:8080/checkURL', {
+//   //     method: 'POST',
+//   //     credentials: 'same-origin',
+//   //     headers: {
+//   //         'Content-Type': 'application/json',
+//   //     },
+//   //     body: JSON.stringify({ formText }),
+//   // })
+
+//   // let results = document.getElementById('results')
+
+//   // .then(res => res.json())
+//   //     .then(function(results) {
+
+
+//   console.log(":::Calling the external API:::");
+//   fetch('http://localhost:8000/api')
+//   .then(res => res.json())
+//   .then(function(res) {
+//       console.log(res);
+//       document.getElementById('resultsTable').innerHTML = res.message + '<br>'
+//   });
+
+//   let results = document.getElementById('resultsTable')
+
 
 function handleSubmit(event) {
     event.preventDefault()
 
     // check what text was put into the form field
     let formText = document.getElementById('userInput').value
-    checkURL(formText)
+ 
     if (Client.checkURL(formText)){
     console.log("::: Form Submitted :::") 
-    getMeaningData("http://localhost:3030/data", formText).then(() => updateUI());
+    getMeaningData("http://localhost:8080/checkURL", formText).then(() => updateUI());
     }};
 
-export { handleSubmit }
 
 //Helper functions: 
 async function getMeaningData(url, userInput) {
@@ -34,7 +69,7 @@ async function getMeaningData(url, userInput) {
   };  
 
 const updateUI = async () => {
-    const request = await fetch("http://localhost:3030/data");
+    const request = await fetch("http://localhost:8080/");
     try {
       const allData = await request.JSON();
     document.getElementById("subjectivity").innerHTML = `Subjectivity: ${allData.subjectivity}`;
@@ -49,3 +84,5 @@ const updateUI = async () => {
       console.log("error", error);
     }
   };
+
+  export { handleSubmit }
