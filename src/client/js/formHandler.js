@@ -3,26 +3,26 @@ import { checkURL } from './checkURL';
 // function handleSubmit(event) {
 //   event.preventDefault()
 //   const formText = document.getElementById('userInput').value;
-//   // const errormessage = Client.checkURL(formText)
-//   // document.getElementById("err").innerHTML = '';
-//   // if (errormessage) {
-//   //     document.getElementById("err").innerHTML = errormessage
-//   //     return
-//   // }
+//   const errormessage = Client.checkURL(formText)
+//   document.getElementById("err").innerHTML = '';
+//   if (errormessage) {
+//       document.getElementById("err").innerHTML = errormessage
+//       return
+//   }
 
-//   // fetch('http://localhost:8080/checkURL', {
-//   //     method: 'POST',
-//   //     credentials: 'same-origin',
-//   //     headers: {
-//   //         'Content-Type': 'application/json',
-//   //     },
-//   //     body: JSON.stringify({ formText }),
-//   // })
+//   fetch('http://localhost:8080/checkURL', {
+//       method: 'POST',
+//       credentials: 'same-origin',
+//       headers: {
+//           'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({ formText }),
+//   })
 
-//   // let results = document.getElementById('results')
+//   let results = document.getElementById('results')
 
-//   // .then(res => res.json())
-//   //     .then(function(results) {
+//   .then(res => res.json())
+//       .then(function(results) {
 
 
 //   console.log(":::Calling the external API:::");

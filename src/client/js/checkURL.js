@@ -1,11 +1,5 @@
-// function checkURL(userInput) {
-//     let regex = ('(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?');
-//     return regex.test(userInput)
-// }
-
 function checkURL() {
-  const expression = new RegExp('(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?');
-  const regex = new RegExp(expression);
+  const regex = ('(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?');
     var url = URL;
     if (regex.test(url) === true) {
         return "Valid URL";

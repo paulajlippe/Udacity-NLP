@@ -43,6 +43,10 @@ app.get("/", function (req, res) {
   res.sendFile(path.resolve("src/client/views/index.html"));
 });
 
+// Route APIKEY
+app.get('/apikey', function (req, res) {
+    res.send(API_KEY)
+  })
 
 // Summary Endpoint: make Meaning Cloud SUMMARY API call, save data to server, send back to client success message
 app.post("/checkURL", async function getMeaningData(req, resp) {
@@ -54,3 +58,7 @@ app.post("/checkURL", async function getMeaningData(req, resp) {
   console.log(data)
 
 })
+
+app.get("/analysis", (req, res) => {
+  res.send({ serverData });
+});
