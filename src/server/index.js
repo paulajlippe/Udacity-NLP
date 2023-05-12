@@ -23,11 +23,11 @@ const app = express();
 
 // Middleware
 const cors = require('cors');
-app.use(cors());
+  app.use(cors());
 
 const bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({extended:false}));
+  app.use(bodyParser.json());
 
 // Server
 const port = 8080;
@@ -39,26 +39,26 @@ function listening() {
 }
 
 // Get
-app.get("/", function (req, res) {
-  res.sendFile(path.resolve("src/client/views/index.html"));
-});
+  app.get("/", function (req, res) {
+    res.sendFile(path.resolve("src/client/views/index.html"));
+  });
 
 // Route APIKEY
-app.get('/apikey', function (req, res) {
-    res.send(API_KEY)
-  })
+  app.get('/apikey', function (req, res) {
+      res.send(API_KEY)
+    })
 
 // Summary Endpoint: make Meaning Cloud SUMMARY API call, save data to server, send back to client success message
-app.post("/checkURL", async function getMeaningData(req, resp) {
-  userInput = req.body.url;
-  console.log("getMeaningData: incoming request is ..", req.body);
+  app.post("/checkURL", async function getMeaningData(req, resp) {
+    userInput = req.body.url;
+    console.log("getMeaningData: incoming request is ..", req.body);
 
-  const response = await fetch(getMeaningData)
-  const data = await response.json()
-  console.log(data)
+    const response = await fetch(getMeaningData)
+    const data = await response.json()
+    console.log(data)
 
-})
+  })
 
-app.get("/analysis", (req, res) => {
-  res.send({ serverData });
-});
+  app.get("/analysis", (req, res) => {
+    res.send({ serverData });
+  });
