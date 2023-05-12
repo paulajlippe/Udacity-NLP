@@ -20,4 +20,4 @@ The app runs with the commands:
 
 The loaders and plugins used are: Babel / Core Cors Express Style-loader node-sass css-loader sass-loader clean-webpack-plugin html-webpack-plugin mini-css-extract-plugin optimize-css-assets-webpack-plugin terser-webpack-plugin
 
-The API provider is: MeaningCloud - no SKD
+The API provider is: MeaningCloud
